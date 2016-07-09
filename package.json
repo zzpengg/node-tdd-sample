@@ -13,7 +13,7 @@
     "test": "./node_modules/.bin/mocha"
   },
   "devDependencies": {
-    "babel-cli": "*",
+    "babel-cli": "^6.10.1",
     "babel-core": "^6.8.0",
     "babel-eslint": "^6.0.4",
     "babel-plugin-syntax-async-functions": "^6.8.0",
