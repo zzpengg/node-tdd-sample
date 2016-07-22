@@ -7,6 +7,7 @@ describe.only('facebook-helper', () => {
     let userId = "618444968267382";
     let token = "EAACEdEose0cBAKoO5ng9l1E05SJ26zo0siYhFE1NaZC8T2FcNknu9CcOy0k7cqkzOkF7Iyk26IhL4CIXyChmXjZA8Y6TZADyjApUImykZC0SDCFJxHq5OS3RAjRZA3AcJ6ZAvFX9Ft8ZC1T6pQlHYrJjERhZCeijbm9gGqVM6WxKqwZDZD";
     facebookHelper = new FacebookHelper({userId, token});
+    console.log(facebookHelper);
     done();
   });
 
@@ -23,7 +24,7 @@ describe.only('facebook-helper', () => {
     }
   });
 
-  it.only("publish post", async (done) => {
+  it.skip("publish post", async (done) => {
     try {
       let post = {
         message: 'test facebook post api'
