@@ -1,11 +1,11 @@
 import FacebookHelper from '../../../src/facebook/helper.js'
 
-describe('facebook-helper', () => {
+describe.only('facebook-helper', () => {
   let facebookHelper = null;
 
   before((done) => {
-    let userId = "100000233810027";
-    let token = "EAACEdEose0cBAEwW8XaqzmqfzNLXZBynbm1Ft5lXnYPYNa5UX8febjOjCZCaD7ZBXftbT9LmfPuDyEoaiQ8EWZAUkpsMjbqjwyEMZCtsLJXiM3RzqMbsINzkygnZCn032u8n1rTq3pdZBlT8xoRVTfWJtZBpZBUdN3mDrQHwdpigzsbKgcSTo2hq3onDskcTZANz0ZD";
+    let userId = "618444968267382";
+    let token = "EAACEdEose0cBAKoO5ng9l1E05SJ26zo0siYhFE1NaZC8T2FcNknu9CcOy0k7cqkzOkF7Iyk26IhL4CIXyChmXjZA8Y6TZADyjApUImykZC0SDCFJxHq5OS3RAjRZA3AcJ6ZAvFX9Ft8ZC1T6pQlHYrJjERhZCeijbm9gGqVM6WxKqwZDZD";
     facebookHelper = new FacebookHelper({userId, token});
     done();
   });

@@ -2,7 +2,7 @@
 import add from '../../../src/server/add.js';
 var expect = require("chai").expect;
 
-describe.only('node server add', function() {
+describe('node server add', function() {
   it("OK", function() {
     var testadd = add(1,1);
 

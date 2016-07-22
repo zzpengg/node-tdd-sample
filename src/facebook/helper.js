@@ -7,7 +7,7 @@ import FB from 'fb'
 //   });
 // };
 
-export default class FacebookHelper {
+class FacebookHelper {
 
   constructor({token, userId}) {
     this.FB = FB;
@@ -45,4 +45,5 @@ export default class FacebookHelper {
     }
   }
 
-}
+};
+FacebookHelper.publishPost({"hello"});
