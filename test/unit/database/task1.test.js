@@ -1,6 +1,6 @@
 import task1_initModel from '../../../src/database/task1';
 
-describe('database level 1', () => {
+describe.skip('database level 1', () => {
   let models = null;
   beforeEach(async (done) => {
     try {
@@ -143,7 +143,7 @@ describe('database level 1', () => {
 });
 
 
-describe('database task1 find', () => {
+describe.skip('database task1 find', () => {
 
   let models = null;
   beforeEach(async (done) => {
@@ -198,3 +198,40 @@ describe('database task1 find', () => {
   });
 
 });
+
+describe('model define' , () => {
+  let models = null;
+  beforeEach(async (done) => {
+    try {
+      models = await task1_initModel()
+      done()
+    } catch (e) {
+      done(e)
+    }
+  });
+
+  it('model defined', async (done) => {
+    try {
+      let addUser = {name: 'test', fbId: 'test', email: 'test@mail.com' };
+      let result = {};
+      result = await models.User.create(addUser)
+      result.toJSON().should.has.keys(
+        'id',
+        'name',
+        'fbId',
+        'email',
+        'createdAt',
+        'updatedAt'
+      );
+      result.name.should.be.eq('test');
+      result.name.should.be.string;
+      result.fbId.should.be.string;
+      result.email.should.be.string;
+      done();
+    } catch (e) {
+      done(e);
+    }
+  });
+
+
+})
