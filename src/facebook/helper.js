@@ -18,14 +18,11 @@ export default class FacebookHelper {
   async getFriends() {
     try {
       let result = await new Promise((resolve, reject) => {
-        this.FB.api(`${this.userId}/friends?fields=id,email,name,fbId`, function(res, error) {
+        this.FB.api(`${this.userId}/friends?fields=id,name`, function(res, error) {
           if(error) reject(error);
           resolve(res.data);
         });
       });
-      result[0].email = 'test@mail.com';
-      result[0].fbId = result[0].id;
-      console.log(result[0].email);
       return result;
     } catch (e) {
       throw e;
