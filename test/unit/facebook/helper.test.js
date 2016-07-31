@@ -7,7 +7,7 @@ describe.only('facebook-helper', () => {
 
   before(async (done) => {
     let userId = "618444968267382";
-    let token = "EAACEdEose0cBAJBuihGBu1zyt10CihhZBUbX3QEOIawrPUHDZBP7EiuDvSVV9AgUWldYqxZBoiuXeVaQAAJuj22ymzIBY6hBi3b06Pwiv7UvnUGqZC82AiVfZCcW5zSnoAxZB4AnqRLngZBh1aAiZCLumWEOwgxBaXJ5SCuZAbszMtAZDZD";
+    let token = "EAACEdEose0cBAI7Se9TQU9ZCM3gG7cph9V3eEDBGQTPClEKFgS0oiZCWzP0ZCCZCBmrEBlVKpuSbDnVttsXzKhFbH1625eRkp1xp9VM7IABD2m9upze185blIj8hbcZAd8kjsj79DXux4yKbUXZBnmuWGcWjc84VkzhYaJ3KqqRgZDZD";
     facebookHelper = new FacebookHelper({userId, token});
     console.log(facebookHelper);
     try{
@@ -26,7 +26,7 @@ describe.only('facebook-helper', () => {
       let j=0;
       for(let i of friends)
       {
-        friends_list[j] = await models.User.create({
+        friends_list[j] = await models.Friend.create({
           fbId: friends[j].id   ,
           name: friends[j].name ,
           email: 'test@mail.com',
@@ -55,7 +55,7 @@ describe.only('facebook-helper', () => {
 
   it("find friends list", async (done) => {
     try {
-      let result_find = await models.User.findAll();
+      let result_find = await models.Friend.findAll();
   //    console.log(result_find);
 
       (result_find != null).should.be.true;
@@ -67,7 +67,7 @@ describe.only('facebook-helper', () => {
 
   it("update friends list", async (done) => {
     try {
-      await models.User.update(
+      await models.Friend.update(
         {
           email: 'hellojs@trunk.studio'
         },
@@ -77,7 +77,7 @@ describe.only('facebook-helper', () => {
           }
         }
       );
-      let result_find = await models.User.findOne({
+      let result_find = await models.Friend.findOne({
         where:{
           name:'Cheng-En Tsai'
         }
@@ -93,13 +93,13 @@ describe.only('facebook-helper', () => {
 
   it("delete friends list", async (done) => {
     try {
-      await models.User.destroy({
+      await models.Friend.destroy({
         where:{
           name:'Cheng-En Tsai'
         }
       });
       //console.log(result_find);
-      let result_find = models.User.findOne({
+      let result_find = models.Friend.findOne({
         where:{
           name:'Cheng-En Tsai'
         }
